@@ -19,3 +19,9 @@
 - FakeStoreAPI                     ->          (https://fakestoreapi.com/)
 - Ant Design UI components         ->          (https://ant.design/)
 
+<h4>To Run this project 
+<br>1. open a new terminal
+<br>2. npx react-native start
+<br>3. open a new terminal
+<br>4. npx run android
+</h4>
