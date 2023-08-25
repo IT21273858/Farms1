@@ -86,14 +86,14 @@ export default function Home() {
   return (
     <Container>
       <InputSearchArea>
-        <InputSearch
+        <InputSearch                                                      // Allow user to search the product
           placeholder="Search for a product..."
           placeholderTextColor="black"
           value={search}
           onChangeText={text => setSearch(text)}
         />
         {
-          search ?
+          search ?                                                      // Search the product when customer click the button
             <ButtonSearch onPress={() => setSearch('')}>
               <Icon name="close" color='tomato'/>
             </ButtonSearch>
@@ -103,11 +103,11 @@ export default function Home() {
             </ButtonSearch>
         }
       </InputSearchArea>
-      <TouchableOpacity onPress={getAllProducts}><Containers>
+      <TouchableOpacity onPress={getAllProducts}><Containers>          // Get all the products details when customer click the Show All button
           <Filter>Show All</Filter>
       </Containers></TouchableOpacity>
         
-      <TouchableOpacity onPress={getSortProducts}><Containers2>
+      <TouchableOpacity onPress={getSortProducts}><Containers2> // Get Fitered products details when customer click the button
           <Filter2>Get Filtered and Sorted</Filter2>
         </Containers2></TouchableOpacity>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -120,7 +120,7 @@ export default function Home() {
        
       {
         (filteredProducts?.length <= 0 && !loadingProducts) &&
-        <EmptyArea>
+        <EmptyArea>                                             // Display image and a message If no search results found
           <Lottie
             source={require('../../assets/animations/search-empty.json')}
             autoPlay
