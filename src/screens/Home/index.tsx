@@ -86,14 +86,15 @@ export default function Home() {
   return (
     <Container>
       <InputSearchArea>
-        <InputSearch                                                      // Allow user to search the product
+      { /*     Allow user to search the product     */} 
+        <InputSearch                                                     
           placeholder="Search for a product..."
           placeholderTextColor="black"
           value={search}
           onChangeText={text => setSearch(text)}
         />
         {
-          search ?                                                      // Search the product when customer click the button
+          search ?       /* Search the product when customer click the button*/                                              
             <ButtonSearch onPress={() => setSearch('')}>
               <Icon name="close" color='tomato'/>
             </ButtonSearch>
@@ -102,12 +103,17 @@ export default function Home() {
               <Icon name="search1" color='black'/>
             </ButtonSearch>
         }
-      </InputSearchArea>
-      <TouchableOpacity onPress={getAllProducts}><Containers>          // Get all the products details when customer click the Show All button
+
+        {     /* Get all the products details when customer click the Show All button */    }
+
+      </InputSearchArea>	   
+      <TouchableOpacity onPress={getAllProducts}><Containers>       
           <Filter>Show All</Filter>
       </Containers></TouchableOpacity>
-        
-      <TouchableOpacity onPress={getSortProducts}><Containers2> // Get Fitered products details when customer click the button
+
+      {     /* Get Fitered products details when customer click the button */     }
+
+      <TouchableOpacity onPress={getSortProducts}><Containers2>    
           <Filter2>Get Filtered and Sorted</Filter2>
         </Containers2></TouchableOpacity>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -115,12 +121,16 @@ export default function Home() {
   <View>
     <Text style={{width: 130, textAlign: 'center'}}><Title>Just For You</Title></Text>
   </View>
+
+  
+  {/*     Display image and a message If no search results found     */}
+
   <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
 </View>
        
-      {
-        (filteredProducts?.length <= 0 && !loadingProducts) &&
-        <EmptyArea>                                             // Display image and a message If no search results found
+      {     
+        (filteredProducts?.length <= 0 && !loadingProducts) &&  
+        <EmptyArea>         
           <Lottie
             source={require('../../assets/animations/search-empty.json')}
             autoPlay

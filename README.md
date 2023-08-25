@@ -24,4 +24,10 @@
 <br>2. npx react-native start
 <br>3. open a new terminal
 <br>4. npx run android
+<hr>
+ If the above method is not working try <b> "react-native run-android" </b>
 </h4>
+<h2><u>Credentials </u></h2>
+ <h3>     username: "mor_2314"
+          password: "83r5^_"
+</h3>              
